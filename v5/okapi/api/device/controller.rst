@@ -119,14 +119,16 @@ controller.
       .. highlight:: cpp
       ::
 
-        virtual ControllerButton operator[](ControllerDigital ibtn)
+        virtual ControllerButton &operator[](ControllerDigital ibtn)
 
    .. tab :: Example
       .. highlight:: cpp
       ::
 
-        okapi::Controller myController;
-        okapi::ControllerButton myButton = myController[ControllerDigital::A]
+        okapi::Controller master;
+        if (master[ControllerDigital::A].changedToPressed()) {
+          // Do something
+        }
 
 ============ ======================================================================================================
  Parameters
